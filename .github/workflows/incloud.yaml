@@ -28,7 +28,7 @@ jobs:
           mv xray_linux_amd64 /home/runner/go/bin/xray
 
           xray
-          for i in $(cat domains.txt); do ./xray webscan --plugins  xss,sqldet,xxe,cmd-injection,upload,path-traversal,dirscan,redirect,jsonp --basic-crawler $i --html-output ${i#*//}.html ;done
+          for i in $(cat domains.txt); do xray webscan --plugins  xss,sqldet,xxe,cmd-injection,upload,path-traversal,dirscan,redirect,jsonp --basic-crawler $i --html-output ${i#*//}.html ;done
         
 
       - name: Cache ProjectDiscovery tools
