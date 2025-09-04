@@ -28,9 +28,9 @@ jobs:
           cp xray_linux_amd64 /home/runner/go/bin/xray
           # mv xray_linux_amd64 xray
 
-          which xray
+          pwd
           
-          ./xray
+          /home/runner/go/bin/./xray
           for i in $(cat domains.txt); do /home/runner/go/bin/./xray webscan --plugins  xss,sqldet,xxe,cmd-injection,upload,path-traversal,dirscan,redirect,jsonp --basic-crawler $i --html-output ${i#*//}.html ;done
 
       - name: Cache ProjectDiscovery tools
