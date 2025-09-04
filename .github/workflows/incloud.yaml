@@ -25,11 +25,13 @@ jobs:
 
           wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip
           unzip xray_linux_amd64.zip
-          mv xray_linux_amd64 /home/runner/go/bin/xray
+          cp xray_linux_amd64 /home/runner/go/bin/xray
+          mv xray_linux_amd64 xray
 
+          which xray
+          
           xray
           for i in $(cat domains.txt); do xray webscan --plugins  xss,sqldet,xxe,cmd-injection,upload,path-traversal,dirscan,redirect,jsonp --basic-crawler $i --html-output ${i#*//}.html ;done
-        
 
       - name: Cache ProjectDiscovery tools
         uses: actions/cache@v3
