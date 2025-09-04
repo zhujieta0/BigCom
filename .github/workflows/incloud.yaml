@@ -20,18 +20,6 @@ jobs:
       - name: Setup Dependencies
         run: sudo apt update && sudo apt-get install -y libpcap-dev gcc make git masscan
 
-      - name: TEST TOOLS
-        run: |
-
-          wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip
-          unzip xray_linux_amd64.zip
-          # cp xray_linux_amd64 /home/runner/go/bin/xray
-          # mv xray_linux_amd64 xray
-
-          pwd
-          
-          /home/runner/work/BigCom/BigCom/./xray_linux_amd64
-          for i in $(cat domains.txt); do /home/runner/work/BigCom/BigCom/./xray_linux_amd64 webscan --plugins  xss,sqldet,xxe,cmd-injection,upload,path-traversal,dirscan,redirect,jsonp --basic-crawler $i --html-output ${i#*//}.html ;done
 
       - name: Cache ProjectDiscovery tools
         uses: actions/cache@v3
@@ -61,6 +49,16 @@ jobs:
       - name: Add Go bin to PATH  # 确保工具可被后续步骤访问
         run: echo "$GOPATH/bin" >> $GITHUB_PATH
 
+      - name: run xray first
+        run: |
+
+          wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip
+          unzip xray_linux_amd64.zip
+          
+          /home/runner/work/BigCom/BigCom/./xray_linux_amd64
+          for i in $(cat domains.txt); do /home/runner/work/BigCom/BigCom/./xray_linux_amd64 webscan --plugins  xss,sqldet,xxe,cmd-injection,upload,path-traversal,dirscan,redirect,jsonp --basic-crawler $i --html-output ${i#*//}.html ;done
+
+
 
       - name: Running way/gau for getting all urls...
         continue-on-error: true
@@ -75,11 +73,7 @@ jobs:
 
           httpx -l all_urls.txt -mc 100,101,200,201,204,301,302,304,400,403,404,500,502,503 -t 13000 | tee http_urls.txt
 
-
-          # wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip
-          # unzip xray_linux_amd64.zip
-          # mv xray_linux_amd64 /home/runner/go/bin/xray
-          
+          for i in $(cat all_urls.txt); do /home/runner/work/BigCom/BigCom/./xray_linux_amd64 webscan --plugins  xss,sqldet,xxe,cmd-injection,upload,path-traversal,dirscan,redirect,jsonp --basic-crawler $i --html-output ${i#*//}.html ;done
       - name: Running NucleiFuzing for vulnerability assessment
         continue-on-error: true
         timeout-minutes: 340
@@ -97,6 +91,7 @@ jobs:
         shell: bash
 
       - name: Create local changes
+        continue-on-error: true
         run: |
           git add *.txt
           git add *.html
