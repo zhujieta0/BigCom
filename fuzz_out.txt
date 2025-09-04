@@ -1,0 +1,19 @@
+[azure-domain-tenant] [http] [info] https://login.microsoftonline.com:443/sutpc.com/v2.0/.well-known/openid-configuration ["fba89935-ed16-4d70-8b6e-98b9f533fcaa"]
+[external-service-interaction] [http] [info] https://sutpc.com/
+[CVE-2023-48795] [javascript] [medium] sutpc.com:22 ["Vulnerable to Terrapin"]
+[ssh-auth-methods] [javascript] [info] sutpc.com:22 ["["publickey","gssapi-keyex","gssapi-with-mic","password"]"]
+[ssh-diffie-hellman-logjam] [javascript] [low] sutpc.com:22
+[ssh-password-auth] [javascript] [info] sutpc.com:22
+[ssh-sha1-hmac-algo] [javascript] [info] sutpc.com:22
+[ssh-server-enumeration] [javascript] [info] sutpc.com:22 ["SSH-2.0-OpenSSH_7.4"]
+[ssh-cbc-mode-ciphers] [javascript] [low] sutpc.com:22
+[ssh-weakkey-exchange-algo] [javascript] [low] sutpc.com:22
+[openssh-detect] [tcp] [info] sutpc.com:22 ["SSH-2.0-OpenSSH_7.4"]
+[tls-version] [ssl] [info] sutpc.com:443 ["tls10"]
+[weak-cipher-suites:tls-1.0] [ssl] [low] sutpc.com:443 ["[tls10 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA]"]
+[deprecated-tls:tls_1.1] [ssl] [info] sutpc.com:443 ["tls11"]
+[tls-version] [ssl] [info] sutpc.com:443 ["tls11"]
+[weak-cipher-suites:tls-1.1] [ssl] [low] sutpc.com:443 ["[tls11 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA]"]
+[deprecated-tls:tls_1.0] [ssl] [info] sutpc.com:443 ["tls10"]
+[tls-version] [ssl] [info] sutpc.com:443 ["tls12"]
+[addeventlistener-detect] [http] [info] http://mail.sutpc.com/
