@@ -1,1 +1,3 @@
-szgzw.gov.cn
+http://srm.sutpc.com:8083
+http://tpis.sutpc.com
+http://tp-res.sutpc.com
