@@ -20,6 +20,17 @@ jobs:
       - name: Setup Dependencies
         run: sudo apt update && sudo apt-get install -y libpcap-dev gcc make git masscan
 
+      - name: TEST TOOLS
+        run: |
+
+          wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip
+          unzip xray_linux_amd64.zip
+          mv xray_linux_amd64 /home/runner/go/bin/xray
+
+          xray
+          for i in $(cat domains.txt); do ./xray webscan --plugins  xss,sqldet,xxe,cmd-injection,upload,path-traversal,dirscan,redirect,jsonp --basic-crawler $i --html-output ${i#*//}.html ;done
+        
+
       - name: Cache ProjectDiscovery tools
         uses: actions/cache@v3
         id: tool-cache
@@ -54,13 +65,18 @@ jobs:
         timeout-minutes: 340
         run: |
           
-          cat active_urls.txt | gau --subs --blacklist png,jpg,gif,css --o ga_urls.txt
-          cat active_urls.txt | waybackurls > way_urls.txt
+          cat domains.txt | gau --subs --blacklist png,jpg,gif,css --o ga_urls.txt
+          cat domains.txt | waybackurls > way_urls.txt
           if [ $(wc -l < ga_urls.txt) -le 20000 ] && [ $(wc -l < way_urls.txt) -le 20000 ]; then
             sort -u ga_urls.txt way_urls.txt -o all_urls.txt
           fi
 
           httpx -l all_urls.txt -mc 100,101,200,201,204,301,302,304,400,403,404,500,502,503 -t 13000 | tee http_urls.txt
+
+
+          # wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip
+          # unzip xray_linux_amd64.zip
+          # mv xray_linux_amd64 /home/runner/go/bin/xray
           
       - name: Running NucleiFuzing for vulnerability assessment
         continue-on-error: true
