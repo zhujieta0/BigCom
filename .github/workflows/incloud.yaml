@@ -54,7 +54,7 @@ jobs:
           go install -v github.com/tomnomnom/waybackurls@latest
           go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
           go install -v github.com/projectdiscovery/mapcidr/cmd/mapcidr@latest
-          go install -v github.com/zan8in/afrog/v3/cmd/afrog@latestges
+          go install -v github.com/zan8in/afrog/v3/cmd/afrog@latest
         shell: bash
 
 
