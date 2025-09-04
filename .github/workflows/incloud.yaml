@@ -47,9 +47,9 @@ jobs:
 
 
       - name: Add Go bin to PATH  # 确保工具可被后续步骤访问
-        run: echo "$GOPATH/bin" >> $GITHUB_PATH
+        run: echo "$GOPATH/bin" >> $GITHUB_PATH && rm -rf *_*.txt && rm -rf *.html
 
-      - name: run xray first
+      - name: Run xray first
         run: |
 
           wget https://github.com/chaitin/xray/releases/download/1.9.11/xray_linux_amd64.zip
