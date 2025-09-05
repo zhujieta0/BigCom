@@ -1,19 +1,39 @@
-[azure-domain-tenant] [http] [info] https://login.microsoftonline.com:443/sutpc.com/v2.0/.well-known/openid-configuration ["fba89935-ed16-4d70-8b6e-98b9f533fcaa"]
-[external-service-interaction] [http] [info] https://sutpc.com/
-[CVE-2023-48795] [javascript] [medium] sutpc.com:22 ["Vulnerable to Terrapin"]
-[ssh-auth-methods] [javascript] [info] sutpc.com:22 ["["publickey","gssapi-keyex","gssapi-with-mic","password"]"]
-[ssh-diffie-hellman-logjam] [javascript] [low] sutpc.com:22
-[ssh-password-auth] [javascript] [info] sutpc.com:22
-[ssh-sha1-hmac-algo] [javascript] [info] sutpc.com:22
-[ssh-server-enumeration] [javascript] [info] sutpc.com:22 ["SSH-2.0-OpenSSH_7.4"]
-[ssh-cbc-mode-ciphers] [javascript] [low] sutpc.com:22
-[ssh-weakkey-exchange-algo] [javascript] [low] sutpc.com:22
-[openssh-detect] [tcp] [info] sutpc.com:22 ["SSH-2.0-OpenSSH_7.4"]
-[tls-version] [ssl] [info] sutpc.com:443 ["tls10"]
-[weak-cipher-suites:tls-1.0] [ssl] [low] sutpc.com:443 ["[tls10 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA]"]
-[deprecated-tls:tls_1.1] [ssl] [info] sutpc.com:443 ["tls11"]
-[tls-version] [ssl] [info] sutpc.com:443 ["tls11"]
-[weak-cipher-suites:tls-1.1] [ssl] [low] sutpc.com:443 ["[tls11 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA]"]
-[deprecated-tls:tls_1.0] [ssl] [info] sutpc.com:443 ["tls10"]
-[tls-version] [ssl] [info] sutpc.com:443 ["tls12"]
-[addeventlistener-detect] [http] [info] http://mail.sutpc.com/
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/css/CommonPage.9087211a.css
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/js/ServiceDetail.7b7b0892.js
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/css/VideoWindow.98564cc4.css
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/js/ArticleDetail.33505f5e.js
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/css/BriefIntroduction.30f630bf.css
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/css/RightsAndMembers.ce8a9e65.css
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/js/VideoDetail.9f8d6b2e.js
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/css/ArticleDetail.047c84e2.css
+[external-service-interaction] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/logo.png
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/js/UnionServices.f5af18d1.js
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/js/app.858b66ac.js
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/css/UnionServices.15725ca2.css
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/css/NewsCenter.cf467fd9.css
+[external-service-interaction] [http] [info] http://www.szgrwhg.com/css/app.8fd15075.css
+[deprecated-tls:tls_1.1] [ssl] [info] zgfwpre.szzgh.org:443 ["tls11"]
+[weak-cipher-suites:tls-1.0] [ssl] [low] zgfwpre.szzgh.org:443 ["[tls10 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA]"]
+[tls-version] [ssl] [info] zgfwpre.szzgh.org:443 ["tls10"]
+[deprecated-tls:tls_1.0] [ssl] [info] zgfwpre.szzgh.org:443 ["tls10"]
+[weak-cipher-suites:tls-1.1] [ssl] [low] zgfwpre.szzgh.org:443 ["[tls11 TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA]"]
+[tls-version] [ssl] [info] zgfwpre.szzgh.org:443 ["tls11"]
+[tls-version] [ssl] [info] zgfwpre.szzgh.org:443 ["tls12"]
+[tls-version] [ssl] [info] zgfwpre.szzgh.org:443 ["tls13"]
+[http-missing-security-headers:cross-origin-resource-policy] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:strict-transport-security] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:permissions-policy] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:x-frame-options] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:referrer-policy] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:clear-site-data] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:content-security-policy] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:x-content-type-options] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:x-permitted-cross-domain-policies] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:cross-origin-embedder-policy] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[http-missing-security-headers:cross-origin-opener-policy] [http] [info] https://zgfwpre.szzgh.org/h5-app/
+[caa-fingerprint] [dns] [info] zgfwpre.szzgh.org
+[ssl-issuer] [ssl] [info] zgfwpre.szzgh.org:443 ["Sectigo Limited"]
+[ssl-dns-names] [ssl] [info] zgfwpre.szzgh.org:443 ["*.szzgh.org","szzgh.org"]
+[wildcard-tls] [ssl] [info] zgfwpre.szzgh.org:443 ["CN: *.szzgh.org","SAN: [*.szzgh.org szzgh.org]"]
