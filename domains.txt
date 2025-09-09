@@ -5,7 +5,7 @@ https://test-xyd-h5.szscredit.com/#/
 https://webtest.szscredit.com/newDist/#/
 https://zxtest.szscredit.com:97/#/
 https://apitest.szscredit.com:8443
-"https://mail.szscredit.com/login/index.html
+https://mail.szscredit.com/login/index.html
 https://smtp.szscredit.com
 https://smtp.szscredit.cn
 https://imap.szscredit.com
